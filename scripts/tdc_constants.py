@@ -1,0 +1,60 @@
+"""Contains constants used for the Therapeutics Data Commons Data."""
+
+DATASET_TO_TYPE = {
+    "Caco2_Wang": "regression",
+    "PAMPA_NCATS": "classification",
+    "HIA_Hou": "classification",
+    "Pgp_Broccatelli": "classification",
+    "Bioavailability_Ma": "classification",
+    "Lipophilicity_AstraZeneca": "regression",
+    "Solubility_AqSolDB": "regression",
+    "HydrationFreeEnergy_FreeSolv": "regression",
+    "BBB_Martins": "classification",
+    "PPBR_AZ": "regression",
+    "VDss_Lombardo": "regression",
+    "CYP2C19_Veith": "classification",
+    "CYP2D6_Veith": "classification",
+    "CYP3A4_Veith": "classification",
+    "CYP1A2_Veith": "classification",
+    "CYP2C9_Veith": "classification",
+    "CYP2C9_Substrate_CarbonMangels": "classification",
+    "CYP2D6_Substrate_CarbonMangels": "classification",
+    "CYP3A4_Substrate_CarbonMangels": "classification",
+    "Half_Life_Obach": "regression",
+    "Clearance_Hepatocyte_AZ": "regression",
+    "Clearance_Microsome_AZ": "regression",
+    "LD50_Zhu": "regression",
+    "hERG": "classification",
+    "herg_central": "classification",
+    "hERG_Karim": "classification",
+    "AMES": "classification",
+    "DILI": "classification",
+    "Skin_Reaction": "classification",
+    "Carcinogens_Lagunin": "classification",
+    "Tox21": "classification",
+    "NR-AR": "classification",
+    "NR-AR-LBD": "classification",
+    "NR-AhR": "classification",
+    "NR-Aromatase": "classification",
+    "NR-ER": "classification",
+    "NR-ER-LBD": "classification",
+    "NR-PPAR-gamma": "classification",
+    "SR-ARE": "classification",
+    "SR-ATAD5": "classification",
+    "SR-HSE": "classification",
+    "SR-MMP": "classification",
+    "SR-p53": "classification",
+    "ToxCast": "classification",
+    "ClinTox": "classification",
+    "admet_regression": "regression",
+    "admet_classification": "classification",
+}
+DATASET_TO_TYPE_LOWER = {dataset.lower(): dataset_type for dataset, dataset_type in DATASET_TO_TYPE.items()}
+DATASET_TYPE_TO_METRICS_COMMAND_LINE = {
+    "classification": ["--metrics", "roc", "prc"],
+    "regression": ["--metrics", "mae", "r2"],
+}
+ADMET_GROUP_SEEDS = [1, 2, 3, 4, 5]
+ADMET_ALL_SMILES_COLUMN = "smiles"
+ADMET_GROUP_SMILES_COLUMN = "Drug"
+ADMET_GROUP_TARGET_COLUMN = "Y"
